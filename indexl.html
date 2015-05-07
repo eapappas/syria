@@ -1,0 +1,247 @@
+<!DOCTYPE html> 
+<html>
+     <head> 
+          <link rel="stylesheet" href="http://libs.cartocdn.com/cartodb.js/v3/3.13/themes/css/cartodb.css" />
+          <link rel="stylesheet" href="http://libs.cartocdn.com/cartodb.js/v3/3.13/themes/css/cartodb.ie.css" />
+          <link rel="stylesheet" href="noUiSlider.7.0.10/jquery.nouislider.min.css" />
+         
+          <script src="http://libs.cartocdn.com/cartodb.js/v3/3.13/cartodb.js"></script>
+          <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+          <script src="noUiSlider.7.0.10/jquery.nouislider.all.min.js"></script>
+          
+          <p style="color:#1F78B4; font-family:calibri; font-weight: bold; font-size: 22pt; padding-left: 20px;">
+          Growth of Syrian Refugee Population Density in Surrounding States
+          </p>
+          
+          <style>
+               html, body{
+                    height: 90%;
+                    width: 83%;
+                    margin: 0;
+                    padding: 0;
+               }
+
+               #map {
+                    height: 100%;
+                    width: 100%;
+               }
+
+               #may2012 {
+                    background: #d3d3d3;
+                    font-family: calibri;
+                    position: absolute;
+                    right: 400px;
+                    top: 90px;
+                    width: 72px;
+                    height: 25px;
+               }
+
+               #may2012:hover {
+                    background: white;
+               }
+
+               #nov2012 {
+                    background: #d3d3d3;
+                    font-family: calibri;
+                    position: absolute;
+                    right: 400px;
+                    top: 125px;
+                    width: 110px;
+                    height: 25px;
+               }
+               #nov2012:hover {
+                    background: white;
+               }
+
+               #may2013 {
+                    background: #d3d3d3;
+                    font-family: calibri;
+                    position: absolute;
+                    right: 400px;
+                    top: 160px;
+                    width: 72px;
+                    height: 25px;
+               }
+               #may2013:hover {
+                    background: white;
+               }
+
+               #nov2013 {
+                    background: #d3d3d3;
+                    font-family: calibri;
+                    position: absolute;
+                    right: 400px;
+                    top: 195px;
+                    width: 110px;
+                    height: 25px;
+               }
+               #nov2013:hover {
+                    background: white;
+               }
+               
+               #may2014 {
+                    background: #d3d3d3;
+                    font-family: calibri;
+                    position: absolute;
+                    right: 400px;
+                    top: 230px;
+                    width: 72px;
+                    height: 25px;
+               }
+               #may2014:hover {
+                    background: white;
+               }
+
+              #nov2014 {
+                    background: #d3d3d3;
+                    font-family: calibri;
+                    position: absolute;
+                    right: 400px;
+                    top: 265px;
+                    width: 110px;
+                    height: 25px;
+               }
+               #nov2014:hover {
+                    background: white;
+               }
+
+              #mar2015 {
+                    background: #d3d3d3;
+                    font-family: calibri;
+                    position: absolute;
+                    right: 400px;
+                    top: 305px;
+                    width: 86px;
+                    height: 25px;
+               }
+               #mar2015:hover {
+                    background: white;
+               }
+
+              
+          </style>
+
+          <script>
+                $(document).ready(function () {
+
+                $('.slider').noUiSlider({
+                start: 1,
+                connect: "lower",
+                orientation: "horizontal",
+                range: {
+                    'min': 1,
+                    'max': 7,
+                    },
+                format: wNumb({
+                    decimals: 0
+                    })
+                });
+                    
+                $('.slider').on('slide', setValue);
+
+                var dataLayer;
+
+                   cartodb.createVis('map', 'https://pappe.cartodb.com/api/v2/viz/198b6648-eec8-11e4-9e4c-0e0c41326911/viz.json', {
+                        cartodb_logo: false,
+                        search: false,
+                        shareable: false,
+                        center_lat: 35.3890000,
+                        center_lon: 40.0781111,
+                        zoom: 6
+                   })               
+                   .done(function (vis, layers) {
+
+                        dataLayer = layers[1].getSubLayer(0);               
+
+                        $('#may2012').click(function () {
+                             dataLayer.setSQL("SELECT *, _201205 as data FROM test3_syria_refugee_pop_extrap_withgeom");
+                        });
+
+                        $('#nov2012').click(function () {
+                             dataLayer.setSQL("SELECT *, _201211 as data FROM test3_syria_refugee_pop_extrap_withgeom");
+                        });
+
+                        $('#may2013').click(function () {
+                             dataLayer.setSQL("SELECT *, _201305 as data FROM test3_syria_refugee_pop_extrap_withgeom");
+                        });
+
+                        $('#nov2013').click(function () {
+                             dataLayer.setSQL("SELECT *, _201311 as data FROM test3_syria_refugee_pop_extrap_withgeom");
+                        });
+
+                        $('#may2014').click(function () {
+                             dataLayer.setSQL("SELECT *, _201405 as data FROM test3_syria_refugee_pop_extrap_withgeom");
+                        });
+
+                        $('#nov2014').click(function () {
+                             dataLayer.setSQL("SELECT *, _201411 as data FROM test3_syria_refugee_pop_extrap_withgeom");
+                        });
+
+                        $('#mar2015').click(function () {
+                             dataLayer.setSQL("SELECT *, _201503 as data FROM test3_syria_refugee_pop_extrap_withgeom");
+                        });
+
+                    });
+
+                    function setValue(){
+                        $("#popSlider").val(function () {var //interval=1
+                             dataLayer.setSQL("SELECT *, _201205 as data FROM test3_syria_refugee_pop_extrap_withgeom");
+                        });
+                        $("#popSlider").val(function () {var //interval=2
+                             dataLayer.setSQL("SELECT *, _201211 as data FROM test3_syria_refugee_pop_extrap_withgeom");
+                        });
+//                        $("#popSlider").val(function () {
+//                             dataLayer.setSQL("SELECT *, _201305 as data FROM test3_syria_refugee_pop_extrap_withgeom");
+//                        });
+//                        $("#popSlider").val(function () {
+//                             dataLayer.setSQL("SELECT *, _201311 as data FROM test3_syria_refugee_pop_extrap_withgeom");
+//                        });
+//                        $("#popSlider").val(function () {
+//                             dataLayer.setSQL("SELECT *, _201311 as data FROM test3_syria_refugee_pop_extrap_withgeom");
+//                        });
+//                        $("#popSlider").val(function () {
+//                             dataLayer.setSQL("SELECT *, _201405 as data FROM test3_syria_refugee_pop_extrap_withgeom");
+//                        });
+//                        $("#popSlider").val(function () {
+//                             dataLayer.setSQL("SELECT *, _201411 as data FROM test3_syria_refugee_pop_extrap_withgeom");
+//                        });
+//                        $("#popSlider").val(function () {
+//                             dataLayer.setSQL("SELECT *, _201503 as data FROM test3_syria_refugee_pop_extrap_withgeom");
+//                        });
+                    };
+                });
+
+          </script>
+     </head> 
+
+     <body> 
+
+    <div id="map"></div>
+    <div id="popSlider">
+        <div class="slider"></div>
+    </div>  
+    <div id="may2012">
+      May 2012
+    </div>
+    <div id="nov2012">
+      November 2012
+    </div>
+    <div id="may2013">
+      May 2013
+    </div>
+    <div id="nov2013">
+      November 2013
+    </div>
+    <div id="may2014">
+      May 2014
+    </div>
+    <div id="nov2014">
+      November 2014
+    </div>
+    <div id="mar2015">
+      March 2015
+    </div>
+
+     </body>
+
+</html>
