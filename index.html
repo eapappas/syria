@@ -14,111 +14,35 @@
           </p>
           
           <style>
-               html, body{
+                html, body {
                     height: 90%;
                     width: 83%;
                     margin: 0;
                     padding: 0;
-               }
+                }
 
-               #map {
+                #map {
                     height: 100%;
                     width: 100%;
-               }
+                }
 
-               #may2012 {
-                    background: #d3d3d3;
-                    font-family: calibri;
-                    position: absolute;
-                    right: 400px;
-                    top: 90px;
-                    width: 72px;
-                    height: 25px;
-               }
-
-               #may2012:hover {
-                    background: white;
-               }
-
-               #nov2012 {
-                    background: #d3d3d3;
+               .button {
+                    display: none;
+                    background: #253494;
+                    color: #FFFFCC;
+                    text-align: center;
+                    font-size: 22px;
                     font-family: calibri;
                     position: absolute;
                     right: 400px;
                     top: 125px;
-                    width: 110px;
-                    height: 25px;
-               }
-               #nov2012:hover {
-                    background: white;
-               }
-
-               #may2013 {
-                    background: #d3d3d3;
-                    font-family: calibri;
-                    position: absolute;
-                    right: 400px;
-                    top: 160px;
-                    width: 72px;
-                    height: 25px;
-               }
-               #may2013:hover {
-                    background: white;
-               }
-
-               #nov2013 {
-                    background: #d3d3d3;
-                    font-family: calibri;
-                    position: absolute;
-                    right: 400px;
-                    top: 195px;
-                    width: 110px;
-                    height: 25px;
-               }
-               #nov2013:hover {
-                    background: white;
-               }
-               
-               #may2014 {
-                    background: #d3d3d3;
-                    font-family: calibri;
-                    position: absolute;
-                    right: 400px;
-                    top: 230px;
-                    width: 72px;
-                    height: 25px;
-               }
-               #may2014:hover {
-                    background: white;
-               }
-
-              #nov2014 {
-                    background: #d3d3d3;
-                    font-family: calibri;
-                    position: absolute;
-                    right: 400px;
-                    top: 265px;
-                    width: 110px;
-                    height: 25px;
-               }
-               #nov2014:hover {
-                    background: white;
-               }
-
-              #mar2015 {
-                    background: #d3d3d3;
-                    font-family: calibri;
-                    position: absolute;
-                    right: 400px;
-                    top: 305px;
-                    width: 86px;
-                    height: 25px;
-               }
-               #mar2015:hover {
-                    background: white;
-               }
-
-              
+                    width: 150px;
+                    height: 30px;
+                }
+/*just need to style the one button, because it inherits the properties of the .button above.*/
+                #may2012 {
+                    display: block
+                }
           </style>
 
           <script>
@@ -128,6 +52,7 @@
                 start: 1,
                 connect: "lower",
                 orientation: "horizontal",
+                behaviour: 'snap',
                 range: {
                     'min': 1,
                     'max': 7,
@@ -184,30 +109,49 @@
                     });
 
                     function setValue(){
-                        $("#popSlider").val(function () {var //interval=1
+                        var val=$('.slider').val()
+                        console.log(val)
+                        
+                        if (val==1){
                              dataLayer.setSQL("SELECT *, _201205 as data FROM test3_syria_refugee_pop_extrap_withgeom");
-                        });
-                        $("#popSlider").val(function () {var //interval=2
+                             $('.button').hide();
+                             $('#may2012').show();
+                        };
+                        if (val==2){
                              dataLayer.setSQL("SELECT *, _201211 as data FROM test3_syria_refugee_pop_extrap_withgeom");
-                        });
-//                        $("#popSlider").val(function () {
-//                             dataLayer.setSQL("SELECT *, _201305 as data FROM test3_syria_refugee_pop_extrap_withgeom");
-//                        });
-//                        $("#popSlider").val(function () {
-//                             dataLayer.setSQL("SELECT *, _201311 as data FROM test3_syria_refugee_pop_extrap_withgeom");
-//                        });
-//                        $("#popSlider").val(function () {
-//                             dataLayer.setSQL("SELECT *, _201311 as data FROM test3_syria_refugee_pop_extrap_withgeom");
-//                        });
-//                        $("#popSlider").val(function () {
-//                             dataLayer.setSQL("SELECT *, _201405 as data FROM test3_syria_refugee_pop_extrap_withgeom");
-//                        });
-//                        $("#popSlider").val(function () {
-//                             dataLayer.setSQL("SELECT *, _201411 as data FROM test3_syria_refugee_pop_extrap_withgeom");
-//                        });
-//                        $("#popSlider").val(function () {
-//                             dataLayer.setSQL("SELECT *, _201503 as data FROM test3_syria_refugee_pop_extrap_withgeom");
-//                        });
+                             $('.button').hide();
+                             $('#nov2012').show();
+                        };
+                        if (val==3){
+                             dataLayer.setSQL("SELECT *, _201305 as data FROM test3_syria_refugee_pop_extrap_withgeom");
+                             $('.button').hide();
+                             $('#may2013').show();
+                        };
+                        if (val==4){
+                             dataLayer.setSQL("SELECT *, _201311 as data FROM test3_syria_refugee_pop_extrap_withgeom");
+                             $('.button').hide();
+                             $('#nov2013').show();
+                        };
+                        if (val==5){
+                             dataLayer.setSQL("SELECT *, _201311 as data FROM test3_syria_refugee_pop_extrap_withgeom");
+                             $('.button').hide();
+                             $('#may2014').show();
+                        };
+                        if (val==6){
+                             dataLayer.setSQL("SELECT *, _201405 as data FROM test3_syria_refugee_pop_extrap_withgeom");
+                             $('.button').hide();
+                             $('#may2014').show();
+                        };
+                        if (val==7){
+                             dataLayer.setSQL("SELECT *, _201411 as data FROM test3_syria_refugee_pop_extrap_withgeom");
+                             $('.button').hide();
+                             $('#nov2014').show();
+                        };
+                        if (val==8){
+                             dataLayer.setSQL("SELECT *, _201503 as data FROM test3_syria_refugee_pop_extrap_withgeom");
+                             $('.button').hide();
+                             $('#mar2015').show();
+                        };
                     };
                 });
 
@@ -220,25 +164,25 @@
     <div id="popSlider">
         <div class="slider"></div>
     </div>  
-    <div id="may2012">
+    <div id="may2012" class="button">
       May 2012
     </div>
-    <div id="nov2012">
+    <div id="nov2012" class="button">
       November 2012
     </div>
-    <div id="may2013">
+    <div id="may2013" class="button">
       May 2013
     </div>
-    <div id="nov2013">
+    <div id="nov2013" class="button">
       November 2013
     </div>
-    <div id="may2014">
+    <div id="may2014" class="button">
       May 2014
     </div>
-    <div id="nov2014">
+    <div id="nov2014" class="button">
       November 2014
     </div>
-    <div id="mar2015">
+    <div id="mar2015" class="button">
       March 2015
     </div>
 
