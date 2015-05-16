@@ -1,5 +1,6 @@
 <!DOCTYPE html> 
 <html>
+<!--Syria-->
      <head> 
           <link rel="stylesheet" href="http://libs.cartocdn.com/cartodb.js/v3/3.13/themes/css/cartodb.css" />
           <link rel="stylesheet" href="http://libs.cartocdn.com/cartodb.js/v3/3.13/themes/css/cartodb.ie.css" />
@@ -12,13 +13,17 @@
           <p style="color:#1F78B4; font-family:calibri; font-weight: bold; font-size: 22pt; padding-left: 20px;">
           Growth of Syrian Refugee Population Density in Surrounding States
           </p>
+         
+          <p style="color:#1F78B4; font-family:calibri; font-weight: bold; font-size: 18pt; padding-left: 20px;">
+          Syria background here.
+          </p>
           
           <style>
                 html, body {
                     height: 90%;
-                    width: 83%;
-                    margin: 0;
-                    padding: 0;
+                    width: 70%;
+                    margin: 50px;
+                    padding: 50px;
                 }
 
                 #map {
@@ -34,8 +39,10 @@
                     font-size: 22px;
                     font-family: calibri;
                     position: absolute;
-                    right: 400px;
-                    top: 125px;
+                    /*right: 400px;
+                    top: 125px;*/
+                    right: 1220px;
+                    top: 657px;
                     width: 150px;
                     height: 30px;
                 }
@@ -44,7 +51,7 @@
                     display: block
                 }
           </style>
-
+         
           <script>
                 $(document).ready(function () {
 
@@ -52,9 +59,9 @@
                 start: 1,
                 connect: "lower",
                 orientation: "horizontal",
-                behaviour: 'snap',
+                behavior: "snap",
                 range: {
-                    'min': 1,
+                    'min': 0,
                     'max': 7,
                     },
                 format: wNumb({
@@ -70,7 +77,7 @@
                         cartodb_logo: false,
                         search: false,
                         shareable: false,
-                        center_lat: 35.3890000,
+                        center_lat: 33.3890000,
                         center_lon: 40.0781111,
                         zoom: 6
                    })               
