@@ -1,0 +1,128 @@
+<!DOCTYPE html> 
+<html>
+     <head> 
+          <link rel="stylesheet" href="http://libs.cartocdn.com/cartodb.js/v3/3.13/themes/css/cartodb.css" />
+          <link rel="stylesheet" href="http://libs.cartocdn.com/cartodb.js/v3/3.13/themes/css/cartodb.ie.css" />
+          <link rel="stylesheet" href="noUiSlider.7.0.10/jquery.nouislider.min.css" />
+         
+          <script src="http://libs.cartocdn.com/cartodb.js/v3/3.13/cartodb.js"></script>
+          <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+          <script src="noUiSlider.7.0.10/jquery.nouislider.all.min.js"></script>
+         <div id="menu">
+            <ul>
+                <li><a href="http://www.eapappas.github.io/index.html">Home</a></li>
+                <li><a href="http://www.eapappas.github.io/syria/syria.html">Syria Map</a></li>
+            </ul>
+          </div> 
+         
+          <p style="color:#1F78B4; margin:10px; font-family:calibri; font-weight: bold; font-size: 24pt; padding-left: 20px; padding-bottom:5px;">
+          Methodology Behind the Syria Map          
+          </p>
+          
+          <style>
+              html, body {
+                    height: 100%;
+                    width: 100%;
+                    margin: 0;
+                    padding: 0;
+              }
+              #menu {
+                  font-family: calibri;
+                  font-size: 20pt;
+                  font-weight: bold;
+                  text-align: right;
+                  margin: 5px;
+                  margin-right: 20px;
+              }
+              #menu ul {
+                  height:auto;
+                  padding:8px 0px;
+                  margin:0px;
+                  content-align: center;
+              }
+              #menu li {
+                  display:inline;
+                  padding:20px;
+              }
+              #menu a {
+                  text-decoration: none;
+                  color: #A1DAB4;
+                  padding:8px 8px 8px 8px;
+              }
+              #menu a:hover {
+                  color: #FFFFeF;
+              }
+              .textbox {
+                  font-family: calibri;
+                  font-size: 16pt;
+                  width: 50%;
+                  margin-left: 60px;
+                  margin-bottom: 30px;
+                  padding: 10px;
+              }
+              #data {
+                  margin-top: 20px;
+                  top: 200px;
+                  background-color: #FFFFCC;
+                  color: #253494;
+              }
+              #states {
+                  background-color: #2C7FB8;
+                  padding: 10px;
+                  color: #FFFFCC;
+              }
+              #provinces {
+                  background-color: #A1DAB4;
+                  color: #253494;
+              } 
+              #intervals {
+                  background-color: #253494;
+                  color: #A1DAB4;
+              }
+              #datagaps {
+                  background-color: #2C7FB8;
+                  color: #253494;
+                  float: left;
+              }
+              #gapsfootnote {
+                  margin-right: 170px;
+                  margin-top: 40px;
+                  width: 25%;
+                  right: 400px;
+                  background-color: #FFFFCC;
+                  color: #2C7FB8;
+                  float: right;
+              }
+          </style>
+
+          <script>
+                $(document).ready(function () {
+
+          </script>
+     </head> 
+
+     <body> 
+        <div id="data" class="textbox">
+        <strong><span style="font-size:24pt;">Data ::</span></strong> I used <a href="http://data.unhcr.org/syrianrefugees/regional.php">UNHCR exclusively as my data source</a>, to maintain some consistency, but even then, aggregated totals and totals of disaggregated counts had some discrepancies.
+        </div>
+        <div id="states" class="textbox">
+        <strong><span style="font-size:24pt;">States ::</span></strong> The four states that surround Syria were chosen: Turkey to the north, Iraq to the east. Jordan to the south, and Lebanon to the west.
+        </div>        
+        <div id="provinces" class="textbox">
+        <strong><span style="font-size:24pt;">Provinces ::</span></strong>  Provinces for which UNCHR made data  on registered Syrians available were used.
+        </div>
+        <div id="intervals" class="textbox">
+        <strong><span style="font-size:24pt;">Intervals ::</span></strong> I chose seven intervals - two per year since 2012 (May and November) + YTD (March) for 2015
+        </div>
+        <div id="datagaps" class="textbox">
+        <strong><span style="font-size:24pt;">Data Gaps ::</span></strong> For several of the month/state combinations,** only totals were available.  In order to fill in the blanks, I determined the proportions that each of the districts in that state contributed to the total for the flanking months, and averaged these percentages.  I then used the resulting percentages against the totals to extrapolate values per district. 
+        </div>
+        <div id="gapsfootnote" class="textbox">
+        <span style="font-size:14pt;"><strong>**</strong><br />
+        Iraq: May 2012, November 2012, May 2013; <br />
+        Jordan: May 2012, November 2012, May 2013; <br />
+        Turkey: May 2012</span>
+        </div>
+     </body>
+
+</html>
