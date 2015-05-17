@@ -10,98 +10,28 @@
           <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
           <script src="noUiSlider.7.0.10/jquery.nouislider.all.min.js"></script>
           
-          <div id="menu">
-                <ul>
-                <li><a href="eapappas.github.io/index.html">Home</a></li>
-                <li><a href="eapappas.github.io/syria/methodology.html">Methodology</a></li>
-                </ul>
-           </div>
-         
           <p style="color:#1F78B4; font-family:calibri; font-weight: bold; font-size: 22pt; padding-left: 20px;">
-          Growth of Syrian Refugee Population Density in Neighboring States
+          Growth of Syrian Refugee Population Density in Surrounding States
           </p>
          
-          <p style="color:#2c7fb8; font-family:calibri; font-size: 16pt; padding-left: 20px; padding-right: 20px;">
-          Since March 2011, Syrian president Bashar Al-Asaad has launched a campaign of violence against his people.  On the heels of the Arab Spring, the Sunni majority, marginalized by the Ba'ath party ruling minority, rose up in revolt.  Asaad has since used any and all techniques in his arsenal to continue to oppress them, engaging in what amount to crimes of war and human atrocities.  As this intrastate, civil violence has continued, compounded by the rise of the Islamic State, Syrians continue to flee their country in droves, ending up as refugees in neighboring states.
-          </p>
-         <p style="color:#2c7fb8; font-family:calibri; font-size: 14pt; padding-left: 800px; padding-right: 20px;">
-          As of the first half of 2015, the number of Syrian citizens considered 'persons of concern' to the UNHCR approaches 4 million; another 6.5 are internally displaced, which is outside the scope of this project.  The 4 million does not include those who have not made themselves known to UNHCR, which can be driven by concerns of safety and/or restrictions on mobility.<br />
-<br />      
-         The current project visualizes the expansion, both in number and direction, of Syrians fleeing conflict in their country to the four neighboring countries:  Turkey to the north, Iraq to the east. Jordan to the south, and Lebanon to the west.  Egypt is also a destination for Syrians, but is out of the scope of this project.<br />
-<br />    
-             The project was conceptualized to be an advocacy tool to emphasize the velocity and volume of incoming refugees into countries whose infrastructure and economic systems cannot sustain this influx of people.  <span style="color:#000080"><strong>Move the slider along the bottom of the map to visualize the drastic refugee expansion since mid 2012.</strong></span>   <br />
-<br />         
-At this time, one in four people in Lebanon is a Syrian refugee.There is a large population of Palestinian refugees who are now doubly displaced, as many who were forced out of Lebanon settled in Syria, and now must flee once again.  As a result of this burden to the neighboring states, those states have begun to respond by making it more difficult to enter and stay, leaving Syrians in danger with options to find safety and security.
+          <p style="color:#1F78B4; font-family:calibri; font-weight: bold; font-size: 18pt; padding-left: 20px;">
+          Syria background here.
           </p>
           
           <style>
                 html, body {
                     height: 90%;
-                    width: 100%;
-                    margin: 0px;
-                    padding: 0px;
+                    width: 70%;
+                    margin: 50px;
+                    padding: 50px;
                 }
 
                 #map {
-                    height: 90%;
-                    width: 50%;
-                    margin: 0px;
-                    padding: 0px;
-                    position: static;
-                    display: block;
-                }
-               
-                #menu{
-                  width: 1200px;
-                  height:50px;
-                  font-size:28px;
-                  font-family: Calibri;
-                  font-weight: bold;
-                  text-align: left;
-                  /*background-color: lightyellow;
-                  /*border-radius:8px*/
-                }
-                #menu ul{
-                  height:auto;
-                  padding:8px 0px;
-                  margin:0px;
-                  content-align: center;
-                }
-                #menu li{
-                  display:inline;
-                  padding:20px;
-                }
-                #menu a{
-                  text-decoration: none;
-                  color: #41b6c4;
-                  opacity: 50%;
-                  padding:8px 8px 8px 8px;
-                  hover: lightyellow; 
-                }
-                #a:hover {
-                    color: lightyellow;
-                }
-               
-                .textbox {
-                    color: #2c7fb8;
-                    font-size: 18px;
-                    font-align: left;
-                    font-family: calibri;
-                    padding: 10px;
-                }
-                #background1 {
-                    top: 25px;
-                    right: 600px;
+                    height: 100%;
                     width: 100%;
-                    height: 100px;    
                 }
-                 #background2 {
-                    top: 100px;
-                    right: 400px;
-                    width: 50%;
-                    height: 900px;    
-                }   
-                .button {
+
+               .button {
                     display: none;
                     background: #253494;
                     color: #FFFFCC;
@@ -116,7 +46,6 @@ At this time, one in four people in Lebanon is a Syrian refugee.There is a large
                     width: 150px;
                     height: 30px;
                 }
-
 /*just need to style the one button, because it inherits the properties of the .button above.*/
                 #may2012 {
                     display: block
@@ -130,7 +59,6 @@ At this time, one in four people in Lebanon is a Syrian refugee.There is a large
                 start: 1,
                 connect: "lower",
                 orientation: "horizontal",
-                //width: 500px,
                 behavior: "snap",
                 range: {
                     'min': 0,
@@ -235,33 +163,19 @@ At this time, one in four people in Lebanon is a Syrian refugee.There is a large
                 });
 
           </script>
-    </head> 
+     </head> 
 
-    <body> 
+     <body> 
+
     <div id="map"></div>
-    <div id="popSlider" style="width: 720px">
+    <div id="popSlider">
         <div class="slider"></div>
     </div>  
- <!--   <div id="background1" class="textbox">
-      Since March 2011, Syrian president Bashar Al-Asaad has launched a campaign of violence against his people.  On the heels of the Arab Spring, the Sunni majority, marginalized by the Ba'ath party ruling minority, rose up in revolved.  Asaad has since used any and all techniques in his arsenal to keep them down, engaging in what amount to crimes of war and human atrocities.  As this intrastate, civil violence has continued, compounded by the rise of the Islamic State, Syrians continue to flee their country in droves, ending up as refugees in neighboring states.
+    <div id="may2012" class="button">
+      May 2012
     </div>
-    <div id="background2" class="textbox">
-      As of the first half of 2015, the number of Syrian citizens considered 'persons of concern' to the UNHCR approaches 4 million; another 6.5 are internally displaced, which is outside the scope of this project.  The 4 million does not include those who have not made themselves known to UNHCR, which can be driven by concerns of safety and/or restrictions on mobility.<br />
-<br />      
-         The current project visualizes the expansion, both in number and direction, of Syrians fleeing conflict in their country to the four neighboring countries:  Turkey to the north, Iraq to the east. Jordan to the south, and Lebanon to the west.  Egypt is also a destination for Syrians, but is out of the scope of this project.<br />
-<br />    
-The project was conceptualized to be an advocacy tool to emphasize the velocity and volume of incoming refugees into countries whose infrastructure and economic systems cannot sustain this influx of people.   At this time, one in four people in Lebanon is a Syrian refugee.<br />
-<br />         
-There is a large population of Palestinian refugees who are now doubly displaced, as many who were forced out of Lebanon settled in Syria, and now must flee once again.  As a result of this burden to the neighboring states, those states have begun to respond by making it more difficult to enter and stay, leaving Syrians in danger with options to find safety and security.<br />
-
-    </div>
--->
-    <div id="background3" class="textbox" style="font-size:18px">
-      This has been called "the worst humanitarian crisis of our era."  UN agencies (UNHCR, WFP) have announced several times that they have run out of resources to provide resources the Syrian refugee population; in March 2015, <a href = "http://www.unhcr.org/55016fff6.html"> the UNHCR High Commissioner Antoinio Gutteres spoke out: </a> "[This crisis] should be galvanizing a global outcry of support, but instead help is dwindling. With humanitarian appeals systematically underfunded, there just isn't enough aid to meet the colossal needs - nor enough development support to the hosting countries creaking under the strain of so many refugees." <br />
-<br />
-The hopelessness as experienced by refugees in countries throughout the middle east and Africa is vividly illustrated by the recent exponential increase in refugees risking their lives to get to Europe, where they imagine a better future, and the resulting tragedies demonstrate the rampant danger.<br />
-<br />
-This small tool is designed to help the user understand the rate at which Syrians have been risking their lives to run for their lives, and I hope brings some context to information that until now only exists as data or isolated snapshots.
+    <div id="nov2012" class="button">
+      November 2012
     </div>
     <div id="may2013" class="button">
       May 2013
